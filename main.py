@@ -1,8 +1,11 @@
 import gspread
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import os
+from dotenv import load_dotenv
 from oauth2client.service_account import ServiceAccountCredentials
+load_dotenv()
+SHEET_KEY = os.getenv("SHEET_KEY")
 
 def fetch_sheet(sheet_id: str, creds_file: str = "credentials/credentials.json"):
     scope = [
@@ -12,12 +15,11 @@ def fetch_sheet(sheet_id: str, creds_file: str = "credentials/credentials.json")
     creds = ServiceAccountCredentials.from_json_keyfile_name(creds_file, scope)
     client = gspread.authorize(creds)
 
-    sheet = client.open_by_key('1lfhUR8BMkGZBUQVZweY3joVVpSgarU5Febq04lEOWtY').sheet1
+    sheet = client.open_by_key(SHEET_KEY).sheet1
     data = sheet.get_all_records()
     df = pd.DataFrame(data)
-    return df   # function ends here
+    return df
 
-# --- code below runs the function ---
 sheet_id = "YOUR_SHEET_ID"
 df = fetch_sheet(sheet_id)
 

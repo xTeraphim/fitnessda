@@ -15,4 +15,4 @@ def fetch_sheet(sheet_id: str, creds_file: str = "credentials.json"):
     sheet = client.open_by_key('1lfhUR8BMkGZBUQVZweY3joVVpSgarU5Febq04lEOWtY').sheet1
     df = fetch_sheet("YOUR_SHEET_ID")
     print(df.head())
-    return sheet.get_all_records()   # returns list of dicts
+    return sheet.get_all_records()

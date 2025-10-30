@@ -26,3 +26,5 @@ Thumbs.db
 
 # Data files (optional)
 data/
+trainingda.code-workspace
+.env
