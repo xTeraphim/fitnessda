@@ -24,7 +24,5 @@ Thumbs.db
 # Logs
 *.log
 
-# Data files (optional)
-data/
 trainingda.code-workspace
 .env
