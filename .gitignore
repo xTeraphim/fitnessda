@@ -1,0 +1,28 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# VS Code settings
+.vscode/
+
+# Credentials
+Credentials/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python test cache
+.pytest_cache/
+.mypy_cache/
+
+# Logs
+*.log
+
+# Data files (optional)
+data/
